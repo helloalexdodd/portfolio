@@ -1,0 +1,76 @@
+	{
+	color: $white;
+}
+
+	{
+	color: $black;
+}
+	
+	{
+	color: $grey;
+}
+
+	{
+	color: $primaryColor;
+}
+
+	{
+	color: $secondaryColor;
+}
+
+	{
+	color: $tertiaryColor;
+}
+
+	{
+	font-family: $primaryFont ;
+}
+
+	{
+	font-family: $secondaryFont;
+}
+
+	{
+	font-weight: 500;
+}
+
+	{
+	font-weight: 600;
+}
+
+	{
+	font-weight: 700;
+}
+	
+	{
+	font-weight: 800;
+}
+
+	{
+	font-weight: 900;
+}
+
+	{
+	text-transform: uppercase;
+}
+
+	{
+	text-transform: lowercase;
+}
+
+	{
+	text-transform: capitalize;
+}
+
+
+@media (max-width: #{$tablet}) {
+
+}
+
+@media (max-width: #{$landscape}) {
+	
+}
+
+@media (max-width: #{$phone}) {
+
+}
