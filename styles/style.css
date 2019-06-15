@@ -407,6 +407,7 @@ header .headerMain .imageContainer {
   overflow: hidden;
   height: 400px;
   width: 400px;
+  margin: 0;
   border-radius: 50%;
 }
 
@@ -506,11 +507,9 @@ header .headerMain .imageContainer img {
   text-align: center;
 }
 
-.toolbox .overlay:hover + svg,
-.toolbox .overlay:hover + i,
-.toolbox .overlay:hover {
-  -webkit-animation: bounce;
-  animation: bounce;
+.toolbox .overlay:hover + svg {
+  -webkit-animation: pulse .5s infinite;
+  animation: pulse .5s infinite;
 }
 
 .toolbox .overlay:hover + svg path {
@@ -631,7 +630,7 @@ header .headerMain .imageContainer img {
 
 .portfolio .workContainer:nth-of-type(1):hover,
 .portfolio .workContainer:nth-of-type(1):hover a {
-  cursor: url("./../assets/svg/diceSolid.svg") 16 16, auto;
+  cursor: url("./../assets/svg/checkerPiece.svg") 16 16, auto;
 }
 
 .portfolio .workContainer:nth-of-type(2):hover,
@@ -651,12 +650,7 @@ header .headerMain .imageContainer img {
 
 .portfolio .workContainer:nth-of-type(5):hover,
 .portfolio .workContainer:nth-of-type(5):hover a {
-  cursor: url("./../assets/svg/cloudSunSolid.svg") 16 16, auto;
-}
-
-.portfolio .workContainer:nth-of-type(6):hover,
-.portfolio .workContainer:nth-of-type(6):hover a {
-  cursor: url("./../assets/svg/hotdog	.svg") 16 16, auto;
+  cursor: url("./../assets/svg/hotdog.svg") 16 16, auto;
 }
 
 .contact {

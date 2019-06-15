@@ -47,11 +47,9 @@
 		text-align: center;
 	}
 
-	.overlay:hover + svg,
-	.overlay:hover + i,
-	.overlay:hover {
-		-webkit-animation: bounce;
-		animation: bounce;
+	.overlay:hover + svg {
+		-webkit-animation: pulse .5s infinite;
+		animation: pulse .5s infinite; 
 	}
 
 	.overlay:hover + svg path {
