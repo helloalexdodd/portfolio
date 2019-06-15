@@ -1,15 +1,42 @@
 footer {
+	background: $black;
+	margin-top: 40px;
+	color: $white;
+
+	.wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100px;
 	
-}
+		a {
+			color: $white;
+			text-decoration: none;
+			
+			i {
+			margin: 10px;
+			font-size: 1.5rem;
+			color: $white;
+			transition: .3s;
+			
+				&:hover {
+					color: $primaryColor;
+				}
+			}
+		}
 
-@media (max-width: #{$tablet}) {
-
-}
-
-@media (max-width: #{$landscape}) {
-
-}
-
-@media (max-width: #{$phone}) {
-
+		p {
+			margin: 0;
+			padding: 0;
+			font-size: .8rem;
+		
+			a {
+				font-weight: 600;
+			
+				&:hover {
+					color: $primaryColor;
+				}
+			}
+		}
+	}
 }

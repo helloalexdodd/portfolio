@@ -1,0 +1,10 @@
+node_modules
+animate.css
+aos
+classlist-polyfill
+jquery
+jquery-smooth-scroll
+loadash.debounce
+lodash.throttle
+typed.js
+wowjs

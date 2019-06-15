@@ -1,0 +1,51 @@
+.contact {
+	padding-top: 50px;
+
+	form {
+		padding: 0px;
+		height: 500px;
+		width: 80%;
+		margin: 0 auto;
+		text-align: center;
+
+		fieldset {
+			border: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		input,
+		textarea {
+			padding: 20px;
+			width: calc(50% - 20px);
+			border: none;
+			border-bottom: 2px solid $black;
+	
+			&::placeholder {
+				opacity: 1;
+				color: $black;
+				font-family: $primaryFont;
+				text-transform: capitalize;
+			}
+		}
+
+		input[type=text] {
+			margin-right: 10px;
+		}
+
+		input[type=email] {
+			margin-left: 10px;			
+		}
+
+		textarea {
+			height: 300px;
+			width: 100%;
+			margin: 40px 0px;
+			padding: 10px 0 200px 10px;
+
+			&::placeholder {
+				text-transform: initial;
+			}
+		}
+	}
+}

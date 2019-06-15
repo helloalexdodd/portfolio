@@ -1,0 +1,66 @@
+.toolbox {
+	padding: 50px 100px;
+	
+	.iconContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	}
+
+	svg,
+	.overlay,
+	i {
+		height: 100px;
+		width: 100px;
+		margin: 30px;
+		transition: .5s;
+	}
+
+	svg {
+		position: relative;
+		transition: .5s;
+		z-index: 0;
+	
+		polygon {
+			fill: $white;
+		}
+	}
+
+	.overlay {
+		display: inline-block;
+		position: absolute;
+		opacity: 1;
+		transition: .5s;
+		z-index: 1;
+	
+	p {
+			visibility: hidden;
+		}
+	}
+
+	svg path,
+	i {
+		fill: $black;
+	}
+
+	i {
+		text-align: center;
+	}
+
+	.overlay:hover + svg,
+	.overlay:hover + i,
+	.overlay:hover {
+		-webkit-animation: bounce;
+		animation: bounce;
+	}
+
+	.overlay:hover + svg path {
+		color: $primaryColor;
+		fill: $primaryColor;
+	}
+
+	.fas {
+		font-size: 100px;
+		color: $black;
+	}
+}

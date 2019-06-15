@@ -1,0 +1,24 @@
+.about {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 60%;
+	margin: 0 auto;
+
+	.aboutContainer {
+		width: 25%;
+	}
+
+		h2 {
+			margin-bottom: 0;
+		}
+
+		p {
+			margin: 50px;
+		}
+
+		button {
+			width: 220px;
+		}
+}
