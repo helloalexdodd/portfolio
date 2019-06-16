@@ -1,22 +1,19 @@
 header {
+	height: 100vh;
+
 	nav {
-		.wrapper {
-			display: flex;
-			justify-content: flex-end;
-			margin: 20px;
-			height: 10vh;
-		 }
+		display: flex;
+		justify-content: flex-end;
+		height: 10vh;
+		margin: 0 20px;
 		
 		ul {
 			display: flex;
+			justify-content: space-around;
 			align-items: center;
 			width: 50%;
 			text-transform: uppercase;
 			list-style: none;
-
-			li  {
-				margin: 20px;
-			}
 
 			a {
 				position: relative;
@@ -112,27 +109,11 @@ header {
 			}
 		}
 
-		.imageContainer {
-			position: relative;
-			overflow: hidden;
-			height: 400px;
-			width: 400px;
-			margin: 0;
-			border-radius: 50%;
-
-			img {
-				position: absolute;
-				top: -80px;
-				width: 400px;
-			}
-		}
-	}
 	.tooltip {
     display: inline-block;
 		position: relative;
-	}
 
-	.tooltip .top {
+	& .top {
 		display: none;
     position: absolute;
     top: -30px;
@@ -151,31 +132,80 @@ header {
 			text-transform: inherit;
 		}
 	}
+		
+		&:hover .top {
+			display:flex;
+			align-items: center;
+		}
 
-	.tooltip:hover .top {
-		display:flex;
-		align-items: center;
+		& .top i {
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			height: 12px;
+			width: 24px;
+			margin-left: -12px;
+			overflow: hidden;
+		}
+
+		& .top i::after {
+			content:'';
+			position: absolute;
+			left: 50%;
+			height: 12px;
+			width: 12px;
+			background-color: lighten($grey, 40%);
+			box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, .5);
+			transform: translate(-50%,-50%) rotate(45deg);
+		}
+	
+		.imageContainer {
+			position: relative;
+			overflow: hidden;
+			height: 400px;
+			width: 400px;
+			margin: 0;
+			border-radius: 50%;
+
+				img {
+					position: absolute;
+					top: -80px;
+					width: 400px;
+				}
+			}
+		}
 	}
 
-	.tooltip .top i {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    height: 12px;
-    width: 24px;
-    margin-left: -12px;
-    overflow: hidden;
-	}
+	.cube {
+		position: absolute;
+		top: 18vh;
+		left: -20px;
+		width: 33.33%;
+		height: 650px;
+		background: $white;	
+		border: solid 20px rgba(149, 149, 149, .5);
+		z-index: -1;
 
-	.tooltip .top i::after {
-    content:'';
-    position: absolute;
-    left: 50%;
-    height: 12px;
-    width: 12px;
-    background-color: lighten($grey, 40%);
-    box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, .5);
-    transform: translate(-50%,-50%) rotate(45deg);
-	}
+		&:nth-child(2n) {
+			left: auto;
+			right: -100px;
+			background: none;
+			border: solid 20px $white;
+			animation: cubeRotate 1000s linear infinite;
+			animation-delay: 15s;
+		}
 
+		&:nth-child(3n) {
+			top: 0;
+			left: auto;
+			right: 0;
+			width: 50%;
+			height: 100vh;
+			border: none;
+			background: rgba(149, 149, 149, .5);
+			transform-origin: top left;
+			transform: scale(0) rotate(0deg) translate(-50%, -50%);
+			animation: cubeInitialRotate 14.5s ease-in forwards, cubeGlow 10s ease-in-out infinite;
+		}
+	}
 }

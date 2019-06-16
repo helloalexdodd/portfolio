@@ -12,7 +12,7 @@ portfolio.smoothScroll = () => {
 }
 
 portfolio.typed = new Typed('#typed', {
-	strings: ["", "^2800Javacsirpt ^300", "Javascript", "Javascript Enthusiast.^2000", "^500 Front End Developer."],
+	strings: ["", "^5000Javacsirpt ^300", "Javascript", "Javascript Enthusiast.^2000", "Front End Developer."],
 	smartBackspace: true,
 	typeSpeed: 50,
 	backSpeed: 40,

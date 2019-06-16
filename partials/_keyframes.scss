@@ -1,0 +1,44 @@
+@keyframes cubeInitialRotate {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);   
+    opacity: 1;
+  }
+	
+	65% {
+    transform: scale(10) rotate(450deg) translate(-50%, -50%); 
+    opacity: 0;
+	}
+	66% {
+		transform: scale(1) rotate(0deg) translate(100%, 0%);		
+	}
+	80% {
+		opacity: 1;
+	}
+	to {
+		transform: translate(0%, 0%);
+	}
+}
+
+@keyframes cubeRotate {
+ from {
+    transform: scale(1) rotate(0deg);   
+  }
+  50% {
+    transform: scale(.75) rotate(360deg); 
+  }
+	to {
+    transform: scale(1) rotate(720deg);   
+	}
+}
+
+@keyframes cubeGlow {
+	from {
+		background: rgba(149, 149, 149, .5);
+	}
+	50% {
+		background: rgba(149, 149, 149, .1);		
+	}
+	to {
+		background: rgba(149, 149, 149, .5);
+	}
+}

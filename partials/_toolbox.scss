@@ -1,6 +1,18 @@
+.backgroundImage {
+	height: 50vh;
+	background-image: url('./../assets/andrew-neel-308138-unsplash.jpg');
+	background-position: 60% 75%;
+	// transform: scale(1);
+	background-attachment: fixed;
+}
 .toolbox {
-	padding: 50px 100px;
-	
+	position: relative;
+	bottom: 250px;
+	padding: 30px 30px 100px 30px;
+	background: $white;
+	border-radius: 2px;
+	box-shadow: 0 0 30px 5px rgba(33, 33, 33, 0.1);
+
 	.iconContainer {
 		display: flex;
 		flex-wrap: wrap;

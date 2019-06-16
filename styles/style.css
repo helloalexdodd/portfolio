@@ -226,7 +226,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1345px;
+  max-width: 1500px;
   width: 90%;
   margin: 0 auto;
 }
@@ -275,6 +275,7 @@ h1 {
 h2 {
   margin: 50px 0 50px;
   font-size: 3.16rem;
+  text-transform: uppercase;
   text-align: center;
 }
 
@@ -299,31 +300,135 @@ a {
   font-size: 1.1rem;
 }
 
-header nav .wrapper {
+@-webkit-keyframes cubeInitialRotate {
+  from {
+    -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  65% {
+    -webkit-transform: scale(10) rotate(450deg) translate(-50%, -50%);
+            transform: scale(10) rotate(450deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+  66% {
+    -webkit-transform: scale(1) rotate(0deg) translate(100%, 0%);
+            transform: scale(1) rotate(0deg) translate(100%, 0%);
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+}
+
+@keyframes cubeInitialRotate {
+  from {
+    -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  65% {
+    -webkit-transform: scale(10) rotate(450deg) translate(-50%, -50%);
+            transform: scale(10) rotate(450deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+  66% {
+    -webkit-transform: scale(1) rotate(0deg) translate(100%, 0%);
+            transform: scale(1) rotate(0deg) translate(100%, 0%);
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+}
+
+@-webkit-keyframes cubeRotate {
+  from {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: scale(0.75) rotate(360deg);
+            transform: scale(0.75) rotate(360deg);
+  }
+  to {
+    -webkit-transform: scale(1) rotate(720deg);
+            transform: scale(1) rotate(720deg);
+  }
+}
+
+@keyframes cubeRotate {
+  from {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: scale(0.75) rotate(360deg);
+            transform: scale(0.75) rotate(360deg);
+  }
+  to {
+    -webkit-transform: scale(1) rotate(720deg);
+            transform: scale(1) rotate(720deg);
+  }
+}
+
+@-webkit-keyframes cubeGlow {
+  from {
+    background: rgba(149, 149, 149, 0.5);
+  }
+  50% {
+    background: rgba(149, 149, 149, 0.1);
+  }
+  to {
+    background: rgba(149, 149, 149, 0.5);
+  }
+}
+
+@keyframes cubeGlow {
+  from {
+    background: rgba(149, 149, 149, 0.5);
+  }
+  50% {
+    background: rgba(149, 149, 149, 0.1);
+  }
+  to {
+    background: rgba(149, 149, 149, 0.5);
+  }
+}
+
+header {
+  height: 100vh;
+}
+
+header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin: 20px;
   height: 10vh;
+  margin: 0 20px;
 }
 
 header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 50%;
   text-transform: uppercase;
   list-style: none;
-}
-
-header nav ul li {
-  margin: 20px;
 }
 
 header nav ul a {
@@ -424,27 +529,12 @@ header .headerMain .headerInfo a:last-of-type {
   padding: 15px 30px;
 }
 
-header .headerMain .imageContainer {
-  position: relative;
-  overflow: hidden;
-  height: 400px;
-  width: 400px;
-  margin: 0;
-  border-radius: 50%;
-}
-
-header .headerMain .imageContainer img {
-  position: absolute;
-  top: -80px;
-  width: 400px;
-}
-
-header .tooltip {
+header .headerMain .tooltip {
   display: inline-block;
   position: relative;
 }
 
-header .tooltip .top {
+header .headerMain .tooltip .top {
   display: none;
   position: absolute;
   top: -30px;
@@ -461,12 +551,12 @@ header .tooltip .top {
   z-index: 1;
 }
 
-header .tooltip .top h3 {
+header .headerMain .tooltip .top h3 {
   font-size: 1rem;
   text-transform: inherit;
 }
 
-header .tooltip:hover .top {
+header .headerMain .tooltip:hover .top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -475,7 +565,7 @@ header .tooltip:hover .top {
           align-items: center;
 }
 
-header .tooltip .top i {
+header .headerMain .tooltip .top i {
   position: absolute;
   top: 100%;
   left: 50%;
@@ -485,7 +575,7 @@ header .tooltip .top i {
   overflow: hidden;
 }
 
-header .tooltip .top i::after {
+header .headerMain .tooltip .top i::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -496,6 +586,59 @@ header .tooltip .top i::after {
           box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, 0.5);
   -webkit-transform: translate(-50%, -50%) rotate(45deg);
           transform: translate(-50%, -50%) rotate(45deg);
+}
+
+header .headerMain .tooltip .imageContainer {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  width: 400px;
+  margin: 0;
+  border-radius: 50%;
+}
+
+header .headerMain .tooltip .imageContainer img {
+  position: absolute;
+  top: -80px;
+  width: 400px;
+}
+
+header .cube {
+  position: absolute;
+  top: 18vh;
+  left: -20px;
+  width: 33.33%;
+  height: 650px;
+  background: white;
+  border: solid 20px rgba(149, 149, 149, 0.5);
+  z-index: -1;
+}
+
+header .cube:nth-child(2n) {
+  left: auto;
+  right: -100px;
+  background: none;
+  border: solid 20px white;
+  -webkit-animation: cubeRotate 1000s linear infinite;
+          animation: cubeRotate 1000s linear infinite;
+  -webkit-animation-delay: 15s;
+          animation-delay: 15s;
+}
+
+header .cube:nth-child(3n) {
+  top: 0;
+  left: auto;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  border: none;
+  background: rgba(149, 149, 149, 0.5);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+          transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cubeInitialRotate 14.5s ease-in forwards, cubeGlow 10s ease-in-out infinite;
+          animation: cubeInitialRotate 14.5s ease-in forwards, cubeGlow 10s ease-in-out infinite;
 }
 
 .about {
@@ -512,6 +655,7 @@ header .tooltip .top i::after {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 100px;
+  margin-top: 100px;
   width: 60%;
   text-align: center;
 }
@@ -586,8 +730,21 @@ header .tooltip .top i::after {
   width: 220px;
 }
 
+.backgroundImage {
+  height: 50vh;
+  background-image: url("./../assets/andrew-neel-308138-unsplash.jpg");
+  background-position: 60% 75%;
+  background-attachment: fixed;
+}
+
 .toolbox {
-  padding: 50px 100px;
+  position: relative;
+  bottom: 250px;
+  padding: 30px 30px 100px 30px;
+  background: white;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 30px 5px rgba(33, 33, 33, 0.1);
+          box-shadow: 0 0 30px 5px rgba(33, 33, 33, 0.1);
 }
 
 .toolbox .iconContainer {
@@ -652,10 +809,6 @@ header .tooltip .top i::after {
 .toolbox .fas {
   font-size: 100px;
   color: #212121;
-}
-
-.portfolio .work {
-  padding-top: 50px;
 }
 
 .portfolio .workContainer {
