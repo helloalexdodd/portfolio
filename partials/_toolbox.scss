@@ -2,9 +2,9 @@
 	padding: 50px 100px;
 	
 	.iconContainer {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
 	}
 
 	svg,
@@ -32,18 +32,6 @@
 		opacity: 1;
 		transition: .5s;
 		z-index: 1;
-	
-	p {
-		display: flex;
-		justify-content: center;
-		margin-top: 50px;
-		color: $black;
-		font-size: 1.5rem;
-		font-weight: bold;
-		text-align: center;
-		text-transform: uppercase;
-		visibility: hidden;
-		}
 	}
 
 	svg path,
@@ -64,12 +52,6 @@
 		&+ svg path {
 			color: $primaryColor;
 			fill: $primaryColor;
-		}
-
-		&> p {
-			margin: 10px auto;
-			// visibility: visible;
-			transition: 1.2s ease-out;
 		}
 	}
 

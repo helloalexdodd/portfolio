@@ -127,4 +127,55 @@ header {
 			}
 		}
 	}
+	.tooltip {
+    display: inline-block;
+		position: relative;
+	}
+
+	.tooltip .top {
+		display: none;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+		height: 50px;
+		padding: 10px 20px;
+    background-color: lighten($grey, 40%);
+		color: $black;
+		border-radius: 10px;
+    box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, .5);
+    transform: translate(-50%, -100%);
+    z-index: 1;
+		
+		h3 {
+			font-size: 1rem;
+			text-transform: inherit;
+		}
+	}
+
+	.tooltip:hover .top {
+		display:flex;
+		align-items: center;
+	}
+
+	.tooltip .top i {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    height: 12px;
+    width: 24px;
+    margin-left: -12px;
+    overflow: hidden;
+	}
+
+	.tooltip .top i::after {
+    content:'';
+    position: absolute;
+    left: 50%;
+    height: 12px;
+    width: 12px;
+    background-color: lighten($grey, 40%);
+    box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, .5);
+    transform: translate(-50%,-50%) rotate(45deg);
+	}
+
 }

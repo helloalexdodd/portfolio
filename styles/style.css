@@ -255,20 +255,37 @@ img {
   width: 100%;
 }
 
+h1,
+h2 {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+h1:hover,
+h2:hover {
+  text-shadow: -4px 4px #959595;
+}
+
 h1 {
   margin: 0;
-  font-size: 4rem;
+  font-size: 5.61rem;
   font-weight: bold;
 }
 
 h2 {
   margin: 50px 0 50px;
-  font-size: 2rem;
+  font-size: 3.16rem;
   text-align: center;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 2.37rem;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+h3:hover {
+  text-shadow: -2px 2px #959595;
 }
 
 h2,
@@ -277,7 +294,8 @@ h3 {
   font-weight: bold;
 }
 
-p {
+p,
+a {
   font-size: 1.1rem;
 }
 
@@ -421,6 +439,65 @@ header .headerMain .imageContainer img {
   width: 400px;
 }
 
+header .tooltip {
+  display: inline-block;
+  position: relative;
+}
+
+header .tooltip .top {
+  display: none;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  height: 50px;
+  padding: 10px 20px;
+  background-color: #fbfbfb;
+  color: #212121;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, 0.5);
+          box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, 0.5);
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  z-index: 1;
+}
+
+header .tooltip .top h3 {
+  font-size: 1rem;
+  text-transform: inherit;
+}
+
+header .tooltip:hover .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .tooltip .top i {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  height: 12px;
+  width: 24px;
+  margin-left: -12px;
+  overflow: hidden;
+}
+
+header .tooltip .top i::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  height: 12px;
+  width: 12px;
+  background-color: #fbfbfb;
+  -webkit-box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, 0.5);
+          box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, 0.5);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
 .about {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -439,8 +516,62 @@ header .headerMain .imageContainer img {
   text-align: center;
 }
 
-.about .aboutContainer {
-  width: 25%;
+.about .tooltip {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.about .tooltip .top {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  min-width: 420px;
+  min-height: 100px;
+  padding: 10px 20px;
+  background-color: #fbfbfb;
+  border-radius: 10px;
+  color: #212121;
+  -webkit-box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, 0.5);
+          box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, 0.5);
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  z-index: 1;
+}
+
+.about .tooltip .top h3 {
+  font-size: 1rem;
+  text-transform: inherit;
+}
+
+.about .tooltip:hover .top {
+  display: block;
+}
+
+.about .tooltip .top i {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  height: 12px;
+  width: 24px;
+  margin-left: -12px;
+  overflow: hidden;
+}
+
+.about .tooltip .top i::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  height: 12px;
+  width: 12px;
+  background-color: #fbfbfb;
+  -webkit-box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, 0.5);
+          box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, 0.5);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .about h2 {
@@ -499,22 +630,6 @@ header .headerMain .imageContainer img {
   z-index: 1;
 }
 
-.toolbox .overlay p {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 50px;
-  color: #212121;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  visibility: hidden;
-}
-
 .toolbox svg path,
 .toolbox i {
   fill: #212121;
@@ -532,12 +647,6 @@ header .headerMain .imageContainer img {
 .toolbox .overlay:hover + svg path {
   color: #0177B5;
   fill: #0177B5;
-}
-
-.toolbox .overlay:hover > p {
-  margin: 10px auto;
-  -webkit-transition: 1.2s ease-out;
-  transition: 1.2s ease-out;
 }
 
 .toolbox .fas {
