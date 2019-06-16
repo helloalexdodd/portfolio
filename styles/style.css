@@ -237,6 +237,7 @@ button {
   border: 2px solid #212121;
   background: #212121;
   color: white;
+  font-family: "Cormorant", serif;
   -webkit-transition: .3s;
   transition: .3s;
   text-transform: uppercase;
@@ -247,6 +248,7 @@ button:hover {
   color: #212121;
   -webkit-box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, 0.5);
           box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, 0.5);
+  cursor: pointer;
 }
 
 img {
@@ -432,8 +434,9 @@ header .headerMain .imageContainer img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 100px;
   width: 60%;
-  margin: 0 auto;
+  text-align: center;
 }
 
 .about .aboutContainer {
@@ -497,6 +500,18 @@ header .headerMain .imageContainer img {
 }
 
 .toolbox .overlay p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
+  color: #212121;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
   visibility: hidden;
 }
 
@@ -517,6 +532,12 @@ header .headerMain .imageContainer img {
 .toolbox .overlay:hover + svg path {
   color: #0177B5;
   fill: #0177B5;
+}
+
+.toolbox .overlay:hover > p {
+  margin: 10px auto;
+  -webkit-transition: 1.2s ease-out;
+  transition: 1.2s ease-out;
 }
 
 .toolbox .fas {
@@ -552,11 +573,6 @@ header .headerMain .imageContainer img {
       -ms-flex-align: center;
           align-items: center;
   width: 50%;
-}
-
-.portfolio .workContainer .workImage .laptop {
-  position: absolute;
-  z-index: 1;
 }
 
 .portfolio .workContainer .workImage .portfolioPiece {
@@ -655,6 +671,10 @@ header .headerMain .imageContainer img {
   cursor: url("./../assets/svg/hotdog.svg") 16 16, auto;
 }
 
+.border {
+  border: 2px solid #0177B5;
+}
+
 .contact {
   padding-top: 50px;
 }
@@ -742,6 +762,12 @@ header .headerMain .imageContainer img {
 
 .contact form textarea::placeholder {
   text-transform: initial;
+}
+
+.contact input,
+.contact textarea {
+  font-family: "Cormorant", serif;
+  cursor: url("./../assets/svg/pencil.svg") 16 16, auto;
 }
 
 footer {

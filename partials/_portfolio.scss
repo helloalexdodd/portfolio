@@ -16,11 +16,6 @@
 			justify-content: center;
 			align-items: center;
 			width: 50%;
-			
-			.laptop {
-				position: absolute;
-				z-index: 1;
-			}
 
 			.portfolioPiece {
 				position: absolute;
@@ -112,4 +107,8 @@
 			cursor: url("./../assets/svg/hotdog.svg") 16 16, auto;
 		}
 	}
+}
+
+.border {
+	border: 2px solid $primaryColor;
 }

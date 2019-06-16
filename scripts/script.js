@@ -1,32 +1,33 @@
 const portfolio = {};
 
+portfolio.$this = $(`this`);
+portfolio.$a = $(`a`);
+portfolio.$toolboxIcon = $(`toolboxIcon`);
+portfolio.$toolbocIconLabel = $(`toolboxIconLabel`);
+
+
+
 portfolio.smoothScroll = () => {
-	$(`a`).smoothScroll();
+		portfolio.$a.smoothScroll({offset: 0});
 }
 
 portfolio.typed = new Typed('#typed', {
-	strings: ["", "^2800Javacsirpt Enthu", "Javascript Enthusiast.^2000", "^500 Front End Developer."],
+	strings: ["", "^2800Javacsirpt ^500", "Javascript", "Javascript Enthusiast.^2000", "^500 Front End Developer."],
 	smartBackspace: true,
 	typeSpeed: 50,
-	backSpeed: 20,
+	backSpeed: 40,
 	backDelay: 300,
 });
 
 portfolio.init = () => {
-	// portfolio.typed();
 	portfolio.smoothScroll();
 }
 
 $(function () {
 	portfolio.init();
-$(".toolBoxIcon").hover(
-  function() {
-    $(this).removeClass("wow slideInLeft");
-    $(this).addClass("animated pulse");
-  },
-  function() {
-    // $(this).removeClass("wow pulse");
-  }
-);
+
+	$toolboxIcon.on(`click`, function() {
+		$(`#htmlIcon`).addClass(`.border`)
+	})
 
 });

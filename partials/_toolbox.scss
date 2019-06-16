@@ -34,7 +34,15 @@
 		z-index: 1;
 	
 	p {
-			visibility: hidden;
+		display: flex;
+		justify-content: center;
+		margin-top: 50px;
+		color: $black;
+		font-size: 1.5rem;
+		font-weight: bold;
+		text-align: center;
+		text-transform: uppercase;
+		visibility: hidden;
 		}
 	}
 
@@ -47,14 +55,22 @@
 		text-align: center;
 	}
 
-	.overlay:hover + svg {
-		-webkit-animation: pulse .5s infinite;
-		animation: pulse .5s infinite; 
-	}
+	.overlay:hover {
+		&+ svg {
+			-webkit-animation: pulse .5s infinite;
+			animation: pulse .5s infinite; 
+		}
 
-	.overlay:hover + svg path {
-		color: $primaryColor;
-		fill: $primaryColor;
+		&+ svg path {
+			color: $primaryColor;
+			fill: $primaryColor;
+		}
+
+		&> p {
+			margin: 10px auto;
+			// visibility: visible;
+			transition: 1.2s ease-out;
+		}
 	}
 
 	.fas {
