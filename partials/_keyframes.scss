@@ -4,14 +4,14 @@
     opacity: 1;
   }
 	
-	65% {
-    transform: scale(10) rotate(450deg) translate(-50%, -50%); 
+	50% {
+    transform: scale(10) rotate(750deg) translate(-50%, -50%); 
     opacity: 0;
 	}
-	66% {
+	51% {
 		transform: scale(1) rotate(0deg) translate(100%, 0%);		
 	}
-	80% {
+	90% {
 		opacity: 1;
 	}
 	to {
@@ -35,10 +35,25 @@
 	from {
 		background: rgba(149, 149, 149, .5);
 	}
+	25% {
+		background: rgba(149, 149, 149, .1);		
+	}
 	50% {
+		background: rgba(149, 149, 149, .8);		
+	}
+	75% {
 		background: rgba(149, 149, 149, .1);		
 	}
 	to {
 		background: rgba(149, 149, 149, .5);
+	}
+}
+
+@keyframes cubeSlide {
+	from {
+		transform: translate(-100%, 0%);
+	}
+	to {
+		transform: translate(0%, 0%);
 	}
 }

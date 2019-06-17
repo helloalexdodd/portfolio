@@ -36,17 +36,30 @@ img {
 }
 
 h1,
-h2 {
+h2,
+h3 {
+	cursor: default;
+}
+
+h1,
+h2,
+h3 {
 	transition: .3s;
 
 	&:hover {
-		text-shadow: -4px 4px $grey;
+		text-shadow: -3px 3px $grey;
 	}
 }
 
 h1 {
 	margin: 0;
 	font-size: 5.61rem;
+	font-weight: bold;
+}
+
+h2,
+h3 {
+	text-transform: capitalize;
 	font-weight: bold;
 }
 
@@ -59,20 +72,29 @@ h2 {
 
 h3 {
 	font-size: 2.37rem;
-	transition: .2s;
-
-	&:hover {
-		text-shadow: -2px 2px $grey;
-	}
 }
 
-h2,
-h3 {
-	text-transform: capitalize;
-	font-weight: bold;
+h4 {
+	font-size: 1.78rem;
 }
 
 p,
 a {
 	font-size: 1.1rem;
+}
+
+@media (max-width: 1500px) {
+	h1 {
+		font-size: 4.21rem;
+	}
+
+	h2 {
+		font-size: 2.37rem;
+	}
+}
+
+@media (max-width: 1300px) {
+	h3 {
+		font-size: 1.78rem;
+	}
 }
