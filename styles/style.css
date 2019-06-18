@@ -535,6 +535,7 @@ header .nav ul {
   width: 50%;
   text-transform: uppercase;
   list-style: none;
+  z-index: 3;
 }
 
 header .nav ul a {
@@ -599,7 +600,7 @@ header .hamburger {
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
-  z-index: 5;
+  z-index: 4;
 }
 
 header .hamburger:hover {
@@ -852,12 +853,8 @@ header .cube:nth-child(3n) {
 @media (max-width: 1500px) {
   header .nav {
     position: relative;
-    z-index: 4;
   }
   header .nav ul {
-    position: fixed;
-    top: -300px;
-    right: 50px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -865,12 +862,13 @@ header .cube:nth-child(3n) {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
-    -webkit-transition: 1s ease;
-    transition: 1s ease;
   }
   header .nav ul li {
+    position: fixed;
+    top: -300px;
+    right: 50px;
     background: rgba(149, 149, 149, 0.5);
-    margin: 1px;
+    height: 50px;
     padding: 10px 20px;
     text-align: left;
   }
