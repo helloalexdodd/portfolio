@@ -981,6 +981,9 @@ header .cube:nth-child(3n) {
     top: 15px;
     right: 15px;
   }
+  .headerInfo .typed {
+    font-size: 1.33rem;
+  }
 }
 
 .about {
