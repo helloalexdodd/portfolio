@@ -222,6 +222,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   cursor: auto;
 }
 
@@ -369,6 +370,18 @@ a {
 @media (max-width: 1150px) {
   h3 {
     font-size: 1.33rem;
+  }
+}
+
+@media (max-width: 750px) {
+  h2 {
+    margin: 30px 0 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 3.16rem;
   }
 }
 
@@ -816,19 +829,12 @@ header .cube {
   border: solid 20px rgba(149, 149, 149, 0.5);
 }
 
-header .cube:nth-of-type(1n) {
-  -webkit-animation: cubeSlide 4.8s ease-out;
-          animation: cubeSlide 4.8s ease-out;
-}
-
 header .cube:nth-child(2n) {
   left: auto;
   right: -100px;
   background: none;
   border: solid 20px white;
   z-index: 1;
-  -webkit-animation: cubeRotate 500s linear infinite;
-          animation: cubeRotate 500s linear infinite;
   -webkit-animation-delay: 15.5s;
           animation-delay: 15.5s;
 }
@@ -884,6 +890,96 @@ header .cube:nth-child(3n) {
   }
   header .cube:nth-child(3n) {
     right: -60px;
+  }
+}
+
+@media (max-width: 1010px) {
+  header .headerMain .tooltip .imageContainer {
+    left: 20px;
+  }
+}
+
+@media (max-width: 890px) {
+  header .nav ul li {
+    right: 0px;
+  }
+  header .headerMain {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .headerMain .headerInfo p {
+    margin-bottom: 50px;
+  }
+  header .headerMain .headerInfo .headerButtons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header .headerMain .headerInfo .headerButtons a {
+    margin: 10px auto;
+  }
+  header .headerMain .headerInfo .headerButtons a:last-of-type {
+    margin-bottom: 50px;
+  }
+  header .headerMain .tooltip .imageContainer {
+    left: auto;
+  }
+  header .cubeContainer .cube:nth-child(3n) {
+    right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    height: 900px;
+  }
+  header .nav ul li {
+    background: #959595;
+  }
+  header .hamburger {
+    width: 25px;
+  }
+  header .hamburger span:nth-child(2),
+  header .hamburger span:nth-child(4) {
+    top: 7px;
+  }
+  header .hamburger span:nth-child(3) {
+    top: 14px;
+  }
+  header .hamburger span {
+    height: 4px;
+  }
+  header .hamburger.hover span:nth-child(1) {
+    -webkit-transform: rotate(-90deg) translate(-8px, -7px);
+    transform: rotate(-90deg) translate(-8px, -7px);
+  }
+  header .hamburger.open span:nth-child(1) {
+    -webkit-transform: rotate(-45deg) translate(-7px, 10px);
+    transform: rotate(-45deg) translate(-7px, 10px);
+  }
+  header .hamburger.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg) translate(10px, 0px);
+    transform: rotate(-45deg) translate(10px, 0px);
+  }
+  header .hamburger.open span:nth-child(4) {
+    -webkit-transform: rotate(45deg) translate(7px, 0px);
+    transform: rotate(45deg) translate(7px, 0px);
+  }
+}
+
+@media (max-width: 450px) {
+  header .hamburger {
+    top: 15px;
+    right: 15px;
   }
 }
 
@@ -965,7 +1061,7 @@ header .cube:nth-child(3n) {
 
 .about h2 {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .about p {
@@ -975,6 +1071,12 @@ header .cube:nth-child(3n) {
 .about button {
   width: 220px;
   margin-top: 50px;
+}
+
+@media (max-width: 1010px) {
+  .about {
+    width: 80%;
+  }
 }
 
 .backgroundImage {
@@ -1035,6 +1137,7 @@ header .cube:nth-child(3n) {
   -webkit-transition: .5s;
   transition: .5s;
   z-index: 1;
+  cursor: default;
 }
 
 .toolbox svg path,
@@ -1064,6 +1167,36 @@ header .cube:nth-child(3n) {
 @media (max-width: 1400px) {
   .toolbox {
     max-width: 1040px;
+  }
+}
+
+@media (max-width: 900px) {
+  .toolbox {
+    padding: 30px;
+  }
+  .toolbox svg,
+  .toolbox .overlay,
+  .toolbox i {
+    height: 80px;
+    width: 80px;
+    margin: 20px;
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+}
+
+@media (max-width: 580px) {
+  .toolbox {
+    padding: 30px 0;
+  }
+  .toolbox svg,
+  .toolbox .overlay,
+  .toolbox i {
+    height: 60px;
+    width: 60px;
+    margin: 20px;
+    -webkit-transition: .5s;
+    transition: .5s;
   }
 }
 
@@ -1327,10 +1460,25 @@ header .cube:nth-child(3n) {
             flex-direction: column;
   }
   .portfolio .workContainer:nth-of-type(2n) .workInfo {
+    text-align: right;
     border-right: 0px solid white;
+  }
+  .portfolio .workContainer:nth-of-type(2n) .workInfo h3 {
+    margin-right: 20px;
+  }
+  .portfolio .workContainer:nth-of-type(2n) .workInfo ul {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
   .portfolio .workContainer:nth-of-type(2n) .workImage {
     width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .portfolio .workContainer {
+    margin: 20px 0;
   }
 }
 
@@ -1410,6 +1558,7 @@ header .cube:nth-child(3n) {
   width: 100%;
   margin: 40px 0px;
   padding: 10px 0 200px 10px;
+  resize: none;
 }
 
 .contact form textarea::-webkit-input-placeholder {
@@ -1432,6 +1581,15 @@ header .cube:nth-child(3n) {
 .contact textarea {
   font-family: "Cormorant", serif;
   cursor: url("./../assets/svg/pencil.svg") 0 32, auto;
+}
+
+@media (max-width: 750px) {
+  .contact {
+    width: 90%;
+  }
+  .contact form textarea {
+    height: 240px;
+  }
 }
 
 footer {
@@ -1489,4 +1647,34 @@ footer .wrapper a a {
 footer .wrapper p a:hover,
 footer .wrapper a a:hover {
   color: #373C5C;
+}
+
+@media (max-width: 685px) {
+  footer .wrapper .socialIcons {
+    width: 100px;
+  }
+  footer .wrapper a i {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 685px) {
+  footer .wrapper p {
+    font-size: .6rem;
+  }
+}
+
+@media (max-width: 450px) {
+  footer .wrapper .fas {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  footer .wrapper a i {
+    font-size: 1rem;
+  }
+  footer .wrapper p {
+    font-size: .6rem;
+  }
 }

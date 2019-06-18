@@ -45,3 +45,50 @@ footer {
 		}
 	}
 }
+
+@media (max-width: 685px) {
+	footer {
+		.wrapper {
+			.socialIcons {
+				width: 100px;
+			}
+
+			a i {
+				font-size: 1.2rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 685px) {
+	footer {
+		.wrapper {
+			p {
+				font-size: .6rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	footer {
+		.wrapper {
+			.fas {
+				display: none
+			}
+		}
+	}
+}
+
+@media (max-width: 360px) {
+	footer {
+		.wrapper {
+			a i {
+				font-size: 1rem;
+			}
+			p {
+				font-size: .6rem;
+			}
+		}
+	}
+}

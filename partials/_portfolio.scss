@@ -244,13 +244,30 @@
 					flex-direction: column;
 
 					.workInfo {				
+						text-align: right;
 						border-right: 0px solid $white;
+
+						h3 {
+							margin-right: 20px;
+						}
+
+						ul {
+							justify-content: flex-end;
+						}
 					}
 
 				.workImage {
 					width: 100%;
 				}
 			}
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.portfolio {
+		.workContainer {
+			margin: 20px 0;
 		}
 	}
 }

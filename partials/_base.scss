@@ -4,6 +4,7 @@ html {
 }
 
 body {
+	overflow-x: hidden;
 	cursor: auto;
 }
 
@@ -136,5 +137,17 @@ a {
 @media (max-width: 1150px) {
 	h3 {
 		font-size: 1.33rem;
+	}
+}
+
+@media (max-width: 750px) {
+	h2 {
+		margin: 30px 0 30px;
+	}
+}
+
+@media (max-width: 500px) {
+	h1 {
+		font-size: 3.16rem;
 	}
 }

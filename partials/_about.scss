@@ -63,7 +63,7 @@
 
 	h2 {
 		width: 100%;
-		margin-bottom: 20px;
+		margin-bottom: 50px;
 	}
 
 	p {
@@ -73,5 +73,11 @@
 	button {
 		width: 220px;
 		margin-top: 50px;
+	}
+}
+
+@media (max-width: 1010px) {
+	.about {
+		width: 80%;
 	}
 }
