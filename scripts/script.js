@@ -4,6 +4,9 @@ portfolio.$this = $(`this`);
 portfolio.$a = $(`a`);
 portfolio.$toolboxIcon = $(`toolboxIcon`);
 portfolio.$toolbocIconLabel = $(`toolboxIconLabel`);
+portfolio.$hamburger = $('.hamburger');
+portfolio.$ul = $(".nav ul");
+portfolio.$li = $('nav ul li');
 
 portfolio.typed = new Typed("#typed", {
   strings: [
@@ -28,42 +31,37 @@ portfolio.smoothScroll = () => {
 }
 
 portfolio.toolClick = () => {
-	portfolio.$toolboxIcon.on(`click`, function(e) {
-    e.preventDefault();
-    $(`#htmlIcon`).addClass(`.border`);
-  });
+	// portfolio.$toolboxIcon.on(`click`, function(e) {
+  //   e.preventDefault();
+  //   $(`#htmlIcon`).addClass(`.border`);
+  // });
 }
 
 portfolio.hamburgerHover = () => {
-	$('.hamburger').hover(function () {
+	portfolio.$hamburger.hover(function () {
 		$(this).toggleClass('hover');
 	});
 }
 
 portfolio.hamburgerClick = () => {
-	$(".hamburger").click(function () {
-		$(".hamburger").toggleClass('open')
-		if ($(".hamburger").hasClass('open')) {
-			$(".nav ul").css('top', '75px');
+	portfolio.$hamburger.click(function () {
+		portfolio.$hamburger.toggleClass('open')
+		if (portfolio.$hamburger.hasClass('open')) {
+			portfolio.$ul.css('top', '75px');
 		} else {
-			$(".nav ul").css('top', '-300px');
+			portfolio.$ul.css('top', '-300px');
 		}
 	});
 };
 
 portfolio.navLinkClick = () => {
-	$('nav ul li').click(function () {
-		if ($(".hamburger").hasClass('open')) {
-			$(".nav ul").css('top', '-300px');
-			$(".hamburger").toggleClass('open')
+	portfolio.$li.click(function () {
+		if (portfolio.$hamburger.hasClass('open')) {
+			portfolio.$ul.css('top', '-300px');
+			portfolio.$hamburger.toggleClass('open')
 		}
 	});
 };
-
-
-
-
-
 
 portfolio.init = () => {
 	portfolio.smoothScroll();

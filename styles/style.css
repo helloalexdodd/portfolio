@@ -865,6 +865,8 @@ header .cube:nth-child(3n) {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
+    -webkit-transition: 1s ease;
+    transition: 1s ease;
   }
   header .nav ul li {
     background: rgba(149, 149, 149, 0.5);
@@ -910,9 +912,7 @@ header .cube:nth-child(3n) {
 .about .tooltip {
   display: inline-block;
   position: relative;
-  text-align: left;
-  -webkit-transition: .3s;
-  transition: .3s;
+  text-align: center;
 }
 
 .about .tooltip .top {
