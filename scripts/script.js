@@ -11,7 +11,7 @@ portfolio.typed = new Typed("#typed", {
     "^5000Javacsirpt ^300",
     "Javascript",
     "Javascript Enthusiast.^2000",
-    "^900Front End Developer."
+    "^900Front-End Developer."
   ],
   smartBackspace: true,
   typeSpeed: 50,
@@ -34,22 +34,45 @@ portfolio.toolClick = () => {
   });
 }
 
+portfolio.hamburgerHover = () => {
+	$('.hamburger').hover(function () {
+		$(this).toggleClass('hover');
+	});
+}
+
+portfolio.hamburgerClick = () => {
+	$(".hamburger").click(function () {
+		$(".hamburger").toggleClass('open')
+		if ($(".hamburger").hasClass('open')) {
+			$(".nav ul").css('top', '75px');
+		} else {
+			$(".nav ul").css('top', '-300px');
+		}
+	});
+};
+
+portfolio.navLinkClick = () => {
+	$('nav ul li').click(function () {
+		if ($(".hamburger").hasClass('open')) {
+			$(".nav ul").css('top', '-300px');
+			$(".hamburger").toggleClass('open')
+		}
+	});
+};
+
+
+
+
+
+
 portfolio.init = () => {
 	portfolio.smoothScroll();
 	portfolio.toolClick();
+	portfolio.hamburgerHover();
+	portfolio.hamburgerClick();
+	portfolio.navLinkClick();
 }
 
 $(function () {
 	portfolio.init();
-
-	// $("document").ready(function() {
-  //   $(".workImage").hover(function() {
-  //     $(".imageOuterOverlay").css("z-index", "1");
-  //     $(".imageOverlay").css("visibility", "visible");
-	// 	}, function() {
-  //     $(".imageOuterOverlay").css("z-index", "0");
-  //     $(".imageOverlay").css("visibility", "hidden");
-	// 	})
-  // }); 
-
 });

@@ -1,7 +1,7 @@
 header {
 	height: 100vh;
 	
-	nav {
+	.nav {
 		display: flex;
 		justify-content: flex-end;
 		height: 10vh;
@@ -31,6 +31,8 @@ header {
 					width: 5px;
 					border-radius: 50%;
 					background: $primaryColor;
+					-moz-transform: scaleY(1);
+					-o-transform: scaleY(1);
 					-webkit-transform: scaleX(1);
 					transform: scaleX(1);
 					-webkit-transition: .3s linear;
@@ -67,6 +69,130 @@ header {
 		}
 	}
 
+	.hamburger {
+		width: 40px;
+		height: 25px;
+		position: fixed;
+		top: 30px;
+		right: 50px;
+		display: none;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: .5s ease-in-out;
+		-moz-transition: .5s ease-in-out;
+		-o-transition: .5s ease-in-out;
+		transition: .5s ease-in-out;
+		cursor: pointer;
+		z-index: 5;
+
+		&:hover {
+			cursor: url("./../assets/svg/circleSolid.svg") 8 8, auto;
+		}
+
+		span {
+			display: block;
+			position: absolute;
+			height: 5px;
+			width: 100%;
+			background: $primaryColor;
+			border-radius: 10px;
+			-webkit-transform: rotate(0deg);
+			-moz-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+			transform: rotate(0deg);
+			-webkit-transition: .25s ease-in-out;
+			-moz-transition: .25s ease-in-out;
+			-o-transition: .25s ease-in-out;
+			transition: .25s ease-in-out;
+		}
+
+		span:nth-child(1) {
+			top: 0px;
+		}
+
+		span:nth-child(2),
+		span:nth-child(4) {
+			top: 12px;
+		}
+
+		span:nth-child(3) {
+			top: 24px;
+		}
+	
+	}
+
+	.hamburger.hover span {
+
+		&:nth-child(1) {
+			-webkit-transform: rotate(-90deg) translate(-8px, -10px);
+			-moz-transform: rotate(-90deg) translate(-8px, -10px);
+			-ms-transform: rotate(-90deg) translate(-8px, -10px);
+			-o-transform: rotate(-90deg) translate(-8px, -10px);
+			transform: rotate(-90deg) translate(-8px, -10px);
+		}
+
+		&:nth-child(2) {
+			-webkit-transform: translate(0px, 6px);
+			-moz-transform: translate(0px, 6px);
+			-ms-transform: translate(0px, 6px);
+			-o-transform: translate(0px, 6px);
+			transform: translate(0px, 6px);
+		}
+
+		&:nth-child(3) {
+			-webkit-transform: rotate(-90deg) translate(8px, 6px);
+			-moz-transform: rotate(-90deg) translate(8px, 6px);
+			-ms-transform: rotate(-90deg) translate(8px, 6px);
+			-o-transform: rotate(-90deg) translate(8px, 6px);
+			transform: rotate(-90deg) translate(8px, 6px);
+		}
+
+		&:nth-child(4) {
+			-webkit-transform: translate(0px, -6px);
+			-moz-transform: translate(0px, -6px);
+			-ms-transform: translate(0px, -6px);
+			-o-transform: translate(0px, -6px);
+			transform: translate(0px, -6px);
+		}
+	}
+
+	.hamburger.open span {
+		
+		&:nth-child(1) {
+			-webkit-transform: rotate(-45deg) translate(-7px, 7px);
+			-moz-transform: rotate(-45deg) translate(-7px, 7px);
+			-ms-transform: rotate(-45deg) translate(-7px, 7px);
+			-o-transform: rotate(-45deg) translate(-7px, 7px);
+			transform: rotate(-45deg) translate(-7px, 7px);
+		}
+
+		&:nth-child(2) {
+			-webkit-transform: rotate(45deg) translate(0px, 0px);
+			-moz-transform: rotate(45deg) translate(0px, 0px);
+			-ms-transform: rotate(45deg) translate(0px, 0px);
+			-o-transform: rotate(45deg) translate(0px, 0px);
+			transform: rotate(45deg) translate(0px, 0px);
+		}
+
+		&:nth-child(3) {
+			-webkit-transform: rotate(-45deg) translate(10px, -10px);
+			-moz-transform: rotate(-45deg) translate(10px, -10px);
+			-ms-transform: rotate(-45deg) translate(10px, -10px);
+			-o-transform: rotate(-45deg) translate(10px, -10px);
+			transform: rotate(-45deg) translate(10px, -10px);
+		}
+
+		&:nth-child(4) {
+			-webkit-transform: rotate(45deg) translate(0px, 0px);
+			-moz-transform: rotate(45deg) translate(0px, 0px);
+			-ms-transform: rotate(45deg) translate(0px, 0px);
+			-o-transform: rotate(45deg) translate(0px, 0px);
+			transform: rotate(45deg) translate(0px, 0px);
+		}
+	}
+
 	.headerMain {
 		display: flex;
 		justify-content: space-around;
@@ -84,8 +210,8 @@ header {
 			}
 			
 			a {
-				border: 2px solid $black;
-				background: $black;
+				border: 2px solid $primaryColor;
+				background: $primaryColor;
 				color: $white;
 				font-size: .9rem;
 				text-decoration: none;
@@ -111,7 +237,7 @@ header {
 		}
 
 		.tooltip {
-    	display: inline-block;
+			display: inline-block;
 			position: relative;
 
 			& .top {
@@ -157,6 +283,10 @@ header {
 				width: 12px;
 				background-color: lighten($grey, 40%);
 				box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, .5);
+				-webkit-transform: translate(-50%,-50%) rotate(45deg);
+				-moz-transform: translate(-50%,-50%) rotate(45deg);
+				-moz-transform: translate(-50%,-50%) rotate(45deg);
+				-o-transform: translate(-50%,-50%) rotate(45deg);
 				transform: translate(-50%,-50%) rotate(45deg);
 			}
 	
@@ -220,17 +350,44 @@ header {
 			border: none;
 			background: rgba(149, 149, 149, .5);
 			transform-origin: top left;
+			-webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+			-moz-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+			-ms-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+			-o-transform: scale(0) rotate(0deg) translate(-50%, -50%);
 			transform: scale(0) rotate(0deg) translate(-50%, -50%);
-			animation: cubeInitialRotate 2s ease-in forwards, cubeGlow 20s linear infinite;
+			animation: cubeInitialRotate 15.5s ease-in forwards, cubeGlow 20s linear infinite;
 		}
 	}
 }
 
 @media (max-width: 1500px) {
 	header {
-		nav {
-			visibility: hidden;
+		// overflow: hidden;
+
+		.nav {
+			position: relative;
+			z-index: 4;
+
+			ul {
+				position: fixed;
+				top: -300px;
+				right: 50px;
+				flex-direction: column;
+				align-items: flex-end;
+			
+				li {
+					background: rgba(149, 149, 149, .5);
+					margin: 1px;
+					padding: 10px 20px;
+					text-align: left;
+				}
+			}
+	
 		}
+
+	.hamburger {
+		display: inline-block;
+	}
 
 	.headerMain {
 

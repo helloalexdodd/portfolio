@@ -25,16 +25,25 @@
 	<!-- start of header -->
 	<header id="home">
 		<!-- start of nav -->
-		<nav>
-				<ul>
-					<li><a href="#home">home</a></li>
-					<li><a href="#portfolio">portfolio</a></li>
-					<li><a href="#toolbox">toolbox</a></li>
-					<li><a href="#about">about</a></li>
-					<li><a href="#contact">contact</a></li>
+		<nav class="nav">
+			<ul class="navList">
+					<li class="navItem"><a href="#home" class="navLink">home</a></li>
+					<li class="navItem"><a href="#portfolio" class="navLink">portfolio</a></li>
+					<li class="navItem"><a href="#toolbox" class="navLink">toolbox</a></li>
+					<li class="navItem"><a href="#about" class="navLink">about</a></li>
+					<li class="navItem"><a href="#contact" class="navLink">contact</a></li>
 				</ul>
 		</nav>
 		<!-- end of nav -->
+		<!-- start of hamburger menu -->
+		<div id="hamburger" class="hamburger">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<!-- end of hamburger menu -->
+		<!-- start of Main Header Section -->
 		<div class="headerMain wrapper">
 			<div class="headerInfo">
 				<h1 data-wow-duration="4s" class="wow fadeInDownBig">Alex Dodd</h1>
@@ -51,12 +60,15 @@
 					<i></i>
 				</div>
 			</div>
-		<div class="cubeContainer">
-			<div class="cube"></div>
-			<div class="cube"></div>
-			<div class="cube"></div>
+				<!-- start of cube animations -->
+			<div class="cubeContainer">
+				<div class="cube"></div>
+				<div class="cube"></div>
+				<div class="cube"></div>
+			</div>
+			<!-- end of cube animations -->
 		</div>
-		</div>
+		<!-- end of Main Header Section -->
 	</header>
 	<!-- end of header -->
 	<!-- start of main -->
@@ -329,7 +341,7 @@
 						</svg>
 					</a>
 					<!-- Javascript Icon -->
-					<a id="javascriptIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInLeft"
+					<a id="javascriptIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInRight"
 						href="#portfolio">
 						<div class="toolboxIcon overlay"></div>
 						<svg viewBox="0 0 128 128">
@@ -339,7 +351,7 @@
 						</svg>
 					</a>
 					<!-- React Icon -->
-					<a id="reactIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInRight"
+					<a id="reactIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInUp"
 						href="#portfolio">
 						<div class="toolboxIcon overlay"></div>
 						<svg viewBox="0 0 128 128">
@@ -349,7 +361,7 @@
 						</svg>
 					</a>
 					<!-- JQuery Icon -->
-					<a id="jqueryIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInDown"
+					<a id="jqueryIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInLeft"
 						href="#portfolio">
 						<div class="toolboxIcon overlay"></div>
 						<svg viewBox="0 0 128 128">
@@ -359,7 +371,7 @@
 						</svg>
 					</a>
 					<!-- FireBaseIcon -->
-					<a id="firebaseIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInUp"
+					<a id="firebaseIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInDown"
 						href="#portfolio">
 						<div class="toolboxIcon overlay"></div>
 						<svg viewBox="0 0 48 48">
@@ -383,7 +395,7 @@
 					</a>
 					<!-- Responsive Design Icon -->
 					<a id="responsiveDesignIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100"
-						class="wow fadeInUp" href="#portfolio">
+						class="wow fadeInDown" href="#portfolio">
 						<div class="toolboxIcon overlay"></div>
 						<svg viewBox="0 0 396.494 396.494">
 							<path d="M304.42,330.901h-43.219c-1.56,0-2.834-1.273-2.834-2.834v-10.52c0-1.559-1.275-2.834-2.834-2.834h-60.475
@@ -405,7 +417,7 @@
 						</svg>
 					</a>
 
-					<a id="apiIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInDown"
+					<a id="apiIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInLeft"
 						href="#portfolio">
 						<div class="toolboxIcon overlay"></div>
 						<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="project-diagram"
@@ -416,7 +428,7 @@
 							</path>
 						</svg>
 					</a>
-					<a id="" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInLeft"
+					<a id="" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInRight"
 						href="#portfolio">
 						<div class="toolboxIcon overlay"></div>
 						<svg viewBox="0 0 128 128">
@@ -425,7 +437,7 @@
 							</path>
 						</svg>
 					</a>
-					<a id="githubIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInDown"
+					<a id="githubIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100" class="wow fadeInUp"
 						href="#portfolio">
 						<div class="toolboxIcon overlay"></div>
 						<svg viewBox="0 0 128 128">
@@ -438,7 +450,7 @@
 						</svg>
 					</a>
 					<a id="visualStudioCodeIcon" data-wow-delay=".6s" data-wow-duration="2s" data-wow-offset="100"
-						class="wow fadeInRight" href="#portfolio">
+						class="wow fadeInLeft" href="#portfolio">
 						<div class="toolboxIcon overlay"></div>
 						<svg viewBox="0 0 128 128">
 							<path class="a"
@@ -451,7 +463,7 @@
 		<!-- end of toolbox section -->
 		<!-- start of about section -->
 		<section id="about" class="about wrapper">
-			<div class="tooltip">
+			<div class="tooltip wrapper">
 				<h2>about</h2>
 				<div class="top">
 					<h3>Another thing about me is that I play music for fun in my spare time!</h3>
@@ -459,7 +471,7 @@
 				</div>
 			</div>
 				<p>You made it all the way down here!? Thank-you!</p>
-				<p>I'm a Front End Developer with a background in small business operation and management. Since pivoting to the world of development I have uncovered a true passion for Javascript and programming. My portfolio shows a body of work that I am proud to have accomplished in the time I've been programming, and I am thrilled to see where my continued learning takes me next. I want to take the skills and knowledge that I've gained over the last fifteen years in business and put them to work in exciting new ways! </p>
+				<p>I'm a Front-End Developer with a background in small business operation and management. Since pivoting to the world of development I have uncovered a true passion for JavaScript and programming. My portfolio shows a body of work that I am proud to have accomplished in the time I've been programming, and I am thrilled to see where my continued learning takes me next. I want to take the skills and knowledge that I've gained over the last fifteen years in business and put them to work in exciting new ways!</p>
 				<form method="get" action="./downloads/alexDoddCV.pdf">
 					<button type="submit">download my cv</button>
 				</form>
@@ -508,7 +520,7 @@
 </body>
 <!-- end of body -->
 <!-- jquery CDN -->
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
 <!-- type.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 <!-- smoothScroll -->

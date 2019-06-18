@@ -16,17 +16,15 @@
 				border-right: 2px solid $darkGrey;
 				border-left: 0px solid $white;
 			}
+		}
+
+		&:last-of-type {
+			border-bottom: 0px solid $white;
+		}
 
 			.workImage {
 				margin-left: 50px;
 			}
-		}
-
-		.workInfo
-
-		&:last-of-type {
-			border-bottom: none;
-		}
 
 		.workImage {
 			position: relative;
@@ -152,7 +150,7 @@
 				width: 100px;
 				margin: 10px;
 				padding: 10px 15px;
-				background: $black;
+				background: $primaryColor;
 				text-decoration: none;
 				color: $white;
 				transition: .3s;
@@ -166,27 +164,32 @@
 		}
 
 		&:nth-of-type(1):hover,
-		&:nth-of-type(1):hover a {
+		&:nth-of-type(1):hover a,
+		&:nth-of-type(1):hover h3 {
 			cursor: url("./../assets/svg/checkerPiece.svg") 16 16, auto;
 		}
 
 		&:nth-of-type(2):hover,
-		&:nth-of-type(2):hover a {
+		&:nth-of-type(2):hover a,
+		&:nth-of-type(2):hover h3 {
 			cursor: url("./../assets/svg/dna.svg") 16 16, auto;
 		}
 
 		&:nth-of-type(3):hover,
-		&:nth-of-type(3):hover a {
+		&:nth-of-type(3):hover a,
+		&:nth-of-type(3):hover h3 {
 			cursor: url("./../assets/svg/bird.svg") 16 16, auto;
 		}
 
 		&:nth-of-type(4):hover,
-		&:nth-of-type(4):hover a {
+		&:nth-of-type(4):hover a,
+		&:nth-of-type(4):hover h3 {
 			cursor: url("./../assets/svg/restaurant.svg") 16 16, auto;
 		}
 
 		&:nth-of-type(5):hover,
-		&:nth-of-type(5):hover a {
+		&:nth-of-type(5):hover a,
+		&:nth-of-type(5):hover h3 {
 			cursor: url("./../assets/svg/hotdog.svg") 16 16, auto;
 		}
 	}
@@ -208,47 +211,46 @@
 	}
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1150px) {
 	.portfolio {
 		.workContainer {
-			flex-direction: column;
-			width: 80%;
-			margin: 20px auto;
-			padding: 20px 20px 60px;
-
-			&:nth-of-type(2n) {
-				flex-direction: column;
-
-				.workInfo {				
-					border-right: 0px solid $white;
-				}
-
-				.workImage {
-					margin-left: 0px;
-				}
-			}
-
 			.workInfo {
-				width: 100%;
-				margin: 0 auto;
-				border-left: 0px solid $white;
-			}
+				width: 40%;
+				padding: 0 10px;
 
-			&:last-of-type {
-				border-bottom: none;
+				h3:after {
+					bottom: 6px;
+				}
 			}
 
 			.workImage {
-				position: inital;
-				display: initial;
-				width: 100%;
-				margin-right: 50px;
-				overflow: visible;
+				width: 60%;
+			}
+		}
+	}
+}
 
-				img {
+@media (max-width: 1010px) {
+	.portfolio {
+		.workContainer {
+				flex-direction: column;
+
+			.workInfo {
+				width: 100%;
+				border-left: 0px solid $white;
+			}
+
+				&:nth-of-type(2n) {
+					flex-direction: column;
+
+					.workInfo {				
+						border-right: 0px solid $white;
+					}
+
+				.workImage {
 					width: 100%;
 				}
-			}	
+			}
 		}
 	}
 }

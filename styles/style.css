@@ -234,8 +234,8 @@ body {
 button {
   height: 60px;
   width: 200px;
-  border: 2px solid #212121;
-  background: #212121;
+  border: 2px solid #373C5C;
+  background: #373C5C;
   color: white;
   font-family: "Cormorant", serif;
   -webkit-transition: .3s;
@@ -261,19 +261,6 @@ h3 {
   cursor: default;
 }
 
-h1,
-h2,
-h3 {
-  -webkit-transition: .3s;
-  transition: .3s;
-}
-
-h1:hover,
-h2:hover,
-h3:hover {
-  text-shadow: -3px 3px #959595;
-}
-
 h1 {
   margin: 0;
   font-size: 5.61rem;
@@ -288,9 +275,67 @@ h3 {
 
 h2 {
   margin: 50px 0 50px;
+  width: auto;
   font-size: 3.16rem;
   text-transform: uppercase;
   text-align: center;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  width: 150px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #373C5C;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+h2:hover::after {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+h2::before {
+  content: '';
+  position: absolute;
+  height: 4px;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  width: 250px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #373C5C;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+h2:hover::before {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
 }
 
 h3 {
@@ -318,6 +363,12 @@ a {
 @media (max-width: 1300px) {
   h3 {
     font-size: 1.78rem;
+  }
+}
+
+@media (max-width: 1150px) {
+  h3 {
+    font-size: 1.33rem;
   }
 }
 
@@ -461,7 +512,7 @@ header {
   height: 100vh;
 }
 
-header nav {
+header .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -472,7 +523,7 @@ header nav {
   margin: 0 20px;
 }
 
-header nav ul {
+header .nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -486,14 +537,14 @@ header nav ul {
   list-style: none;
 }
 
-header nav ul a {
+header .nav ul a {
   position: relative;
   color: #212121;
   text-decoration: none;
   z-index: 1;
 }
 
-header nav ul a::before {
+header .nav ul a::before {
   content: "";
   display: block;
   position: absolute;
@@ -502,26 +553,26 @@ header nav ul a::before {
   height: 5px;
   width: 5px;
   border-radius: 50%;
-  background: #0177B5;
+  background: #373C5C;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
   -webkit-transition: .3s linear;
   transition: .3s linear;
 }
 
-header nav ul a:hover::before {
+header .nav ul a:hover::before {
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
 }
 
-header nav ul a::after {
+header .nav ul a::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 3px;
   bottom: 0;
   left: 0;
-  background: #0177B5;
+  background: #373C5C;
   visibility: hidden;
   border-radius: 5px;
   -webkit-transform: scaleX(0);
@@ -530,10 +581,95 @@ header nav ul a::after {
   transition: .3s linear;
 }
 
-header nav ul a:hover::after {
+header .nav ul a:hover::after {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
+}
+
+header .hamburger {
+  width: 40px;
+  height: 25px;
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  display: none;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  z-index: 5;
+}
+
+header .hamburger:hover {
+  cursor: url("./../assets/svg/circleSolid.svg") 8 8, auto;
+}
+
+header .hamburger span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: #373C5C;
+  border-radius: 10px;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+header .hamburger span:nth-child(1) {
+  top: 0px;
+}
+
+header .hamburger span:nth-child(2),
+header .hamburger span:nth-child(4) {
+  top: 12px;
+}
+
+header .hamburger span:nth-child(3) {
+  top: 24px;
+}
+
+header .hamburger.hover span:nth-child(1) {
+  -webkit-transform: rotate(-90deg) translate(-8px, -10px);
+  transform: rotate(-90deg) translate(-8px, -10px);
+}
+
+header .hamburger.hover span:nth-child(2) {
+  -webkit-transform: translate(0px, 6px);
+  transform: translate(0px, 6px);
+}
+
+header .hamburger.hover span:nth-child(3) {
+  -webkit-transform: rotate(-90deg) translate(8px, 6px);
+  transform: rotate(-90deg) translate(8px, 6px);
+}
+
+header .hamburger.hover span:nth-child(4) {
+  -webkit-transform: translate(0px, -6px);
+  transform: translate(0px, -6px);
+}
+
+header .hamburger.open span:nth-child(1) {
+  -webkit-transform: rotate(-45deg) translate(-7px, 7px);
+  transform: rotate(-45deg) translate(-7px, 7px);
+}
+
+header .hamburger.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg) translate(0px, 0px);
+  transform: rotate(45deg) translate(0px, 0px);
+}
+
+header .hamburger.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translate(10px, -10px);
+  transform: rotate(-45deg) translate(10px, -10px);
+}
+
+header .hamburger.open span:nth-child(4) {
+  -webkit-transform: rotate(45deg) translate(0px, 0px);
+  transform: rotate(45deg) translate(0px, 0px);
 }
 
 header .headerMain {
@@ -558,8 +694,8 @@ header .headerMain .headerInfo .typed-cursor {
 }
 
 header .headerMain .headerInfo a {
-  border: 2px solid #212121;
-  background: #212121;
+  border: 2px solid #373C5C;
+  background: #373C5C;
   color: white;
   font-size: .9rem;
   text-decoration: none;
@@ -641,7 +777,7 @@ header .headerMain .tooltip .top i::after {
   -webkit-box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, 0.5);
           box-shadow: 1px 5px 10px 0 rgba(33, 33, 33, 0.5);
   -webkit-transform: translate(-50%, -50%) rotate(45deg);
-          transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 header .headerMain .tooltip .imageContainer {
@@ -708,14 +844,36 @@ header .cube:nth-child(3n) {
   -webkit-transform-origin: top left;
           transform-origin: top left;
   -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
-          transform: scale(0) rotate(0deg) translate(-50%, -50%);
-  -webkit-animation: cubeInitialRotate 2s ease-in forwards, cubeGlow 20s linear infinite;
-          animation: cubeInitialRotate 2s ease-in forwards, cubeGlow 20s linear infinite;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cubeInitialRotate 15.5s ease-in forwards, cubeGlow 20s linear infinite;
+          animation: cubeInitialRotate 15.5s ease-in forwards, cubeGlow 20s linear infinite;
 }
 
 @media (max-width: 1500px) {
-  header nav {
-    visibility: hidden;
+  header .nav {
+    position: relative;
+    z-index: 4;
+  }
+  header .nav ul {
+    position: fixed;
+    top: -300px;
+    right: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  header .nav ul li {
+    background: rgba(149, 149, 149, 0.5);
+    margin: 1px;
+    padding: 10px 20px;
+    text-align: left;
+  }
+  header .hamburger {
+    display: inline-block;
   }
   header .headerMain .tooltip .imageContainer {
     height: 300px;
@@ -808,6 +966,7 @@ header .cube:nth-child(3n) {
 }
 
 .about h2 {
+  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -836,8 +995,8 @@ header .cube:nth-child(3n) {
   padding: 30px 30px 100px 30px;
   background: white;
   border-radius: 2px;
-  -webkit-box-shadow: 5px 5px 10px 25px rgba(33, 33, 33, 0.1);
-          box-shadow: 5px 5px 10px 25px rgba(33, 33, 33, 0.1);
+  -webkit-box-shadow: 0 0 30px 5px rgba(33, 33, 33, 0.1);
+          box-shadow: 0 0 30px 5px rgba(33, 33, 33, 0.1);
 }
 
 .toolbox .iconContainer {
@@ -895,8 +1054,8 @@ header .cube:nth-child(3n) {
 }
 
 .toolbox .overlay:hover + svg path {
-  color: #0177B5;
-  fill: #0177B5;
+  color: #373C5C;
+  fill: #373C5C;
 }
 
 .toolbox .fas {
@@ -940,13 +1099,12 @@ header .cube:nth-child(3n) {
   border-left: 0px solid white;
 }
 
-.portfolio .workContainer:nth-of-type(2n) .workImage {
-  margin-left: 50px;
+.portfolio .workContainer:last-of-type {
+  border-bottom: 0px solid white;
 }
 
-.workInfo
-.portfolio .workContainer:last-of-type {
-  border-bottom: none;
+.portfolio .workContainer .workImage {
+  margin-left: 50px;
 }
 
 .portfolio .workContainer .workImage {
@@ -1048,7 +1206,7 @@ header .cube:nth-child(3n) {
 .portfolio .workContainer .tools li {
   margin: 5px;
   padding: 5px 7px;
-  border: 1.5px dashed #0177B5;
+  border: 1.5px dashed #373C5C;
 }
 
 .portfolio .workContainer .workInfo {
@@ -1072,7 +1230,7 @@ header .cube:nth-child(3n) {
   height: 5px;
   width: 5px;
   border-radius: 50%;
-  background: #0177B5;
+  background: #373C5C;
 }
 
 .portfolio .workContainer .workInfo p {
@@ -1084,7 +1242,7 @@ header .cube:nth-child(3n) {
   width: 100px;
   margin: 10px;
   padding: 10px 15px;
-  background: #212121;
+  background: #373C5C;
   text-decoration: none;
   color: white;
   -webkit-transition: .3s;
@@ -1099,27 +1257,32 @@ header .cube:nth-child(3n) {
 }
 
 .portfolio .workContainer:nth-of-type(1):hover,
-.portfolio .workContainer:nth-of-type(1):hover a {
+.portfolio .workContainer:nth-of-type(1):hover a,
+.portfolio .workContainer:nth-of-type(1):hover h3 {
   cursor: url("./../assets/svg/checkerPiece.svg") 16 16, auto;
 }
 
 .portfolio .workContainer:nth-of-type(2):hover,
-.portfolio .workContainer:nth-of-type(2):hover a {
+.portfolio .workContainer:nth-of-type(2):hover a,
+.portfolio .workContainer:nth-of-type(2):hover h3 {
   cursor: url("./../assets/svg/dna.svg") 16 16, auto;
 }
 
 .portfolio .workContainer:nth-of-type(3):hover,
-.portfolio .workContainer:nth-of-type(3):hover a {
+.portfolio .workContainer:nth-of-type(3):hover a,
+.portfolio .workContainer:nth-of-type(3):hover h3 {
   cursor: url("./../assets/svg/bird.svg") 16 16, auto;
 }
 
 .portfolio .workContainer:nth-of-type(4):hover,
-.portfolio .workContainer:nth-of-type(4):hover a {
+.portfolio .workContainer:nth-of-type(4):hover a,
+.portfolio .workContainer:nth-of-type(4):hover h3 {
   cursor: url("./../assets/svg/restaurant.svg") 16 16, auto;
 }
 
 .portfolio .workContainer:nth-of-type(5):hover,
-.portfolio .workContainer:nth-of-type(5):hover a {
+.portfolio .workContainer:nth-of-type(5):hover a,
+.portfolio .workContainer:nth-of-type(5):hover h3 {
   cursor: url("./../assets/svg/hotdog.svg") 16 16, auto;
 }
 
@@ -1135,15 +1298,29 @@ header .cube:nth-child(3n) {
   }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1150px) {
+  .portfolio .workContainer .workInfo {
+    width: 40%;
+    padding: 0 10px;
+  }
+  .portfolio .workContainer .workInfo h3:after {
+    bottom: 6px;
+  }
+  .portfolio .workContainer .workImage {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1010px) {
   .portfolio .workContainer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 80%;
-    margin: 20px auto;
-    padding: 20px 20px 60px;
+  }
+  .portfolio .workContainer .workInfo {
+    width: 100%;
+    border-left: 0px solid white;
   }
   .portfolio .workContainer:nth-of-type(2n) {
     -webkit-box-orient: vertical;
@@ -1155,24 +1332,6 @@ header .cube:nth-child(3n) {
     border-right: 0px solid white;
   }
   .portfolio .workContainer:nth-of-type(2n) .workImage {
-    margin-left: 0px;
-  }
-  .portfolio .workContainer .workInfo {
-    width: 100%;
-    margin: 0 auto;
-    border-left: 0px solid white;
-  }
-  .portfolio .workContainer:last-of-type {
-    border-bottom: none;
-  }
-  .portfolio .workContainer .workImage {
-    position: inital;
-    display: initial;
-    width: 100%;
-    margin-right: 50px;
-    overflow: visible;
-  }
-  .portfolio .workContainer .workImage img {
     width: 100%;
   }
 }
@@ -1274,7 +1433,7 @@ header .cube:nth-child(3n) {
 .contact input,
 .contact textarea {
   font-family: "Cormorant", serif;
-  cursor: url("./../assets/svg/pencil.svg") 16 16, auto;
+  cursor: url("./../assets/svg/pencil.svg") 0 32, auto;
 }
 
 footer {
@@ -1308,7 +1467,7 @@ footer .wrapper a i {
 }
 
 footer .wrapper a i:hover {
-  color: #0177B5;
+  color: #373C5C;
 }
 
 footer .wrapper i,
@@ -1331,5 +1490,5 @@ footer .wrapper a a {
 
 footer .wrapper p a:hover,
 footer .wrapper a a:hover {
-  color: #0177B5;
+  color: #373C5C;
 }

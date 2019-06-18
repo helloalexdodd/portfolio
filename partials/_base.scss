@@ -16,8 +16,8 @@ body {
 button {
 	height: 60px;
 	width: 200px;
-	border: 2px solid $black;
-	background: $black;
+	border: 2px solid $primaryColor;
+	background: $primaryColor;
 	color: $white;
 	font-family: $primaryFont;
 	transition: .3s;
@@ -41,16 +41,6 @@ h3 {
 	cursor: default;
 }
 
-h1,
-h2,
-h3 {
-	transition: .3s;
-
-	&:hover {
-		text-shadow: -3px 3px $grey;
-	}
-}
-
 h1 {
 	margin: 0;
 	font-size: 5.61rem;
@@ -65,9 +55,53 @@ h3 {
 
 h2 {
 	margin: 50px 0 50px;
+	width: auto;
 	font-size: 3.16rem;
 	text-transform: uppercase;
 	text-align: center;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		height: 4px;
+		bottom: -5px;
+		left: 0;
+		right: 0;
+		width: 150px;
+		margin: 0 auto;
+		border-radius: 10px;
+		background-color: $primaryColor;
+		transform-origin: bottom right;
+		transform: scaleX(1);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	&:hover::after {
+		transform: scaleX(0);
+		transform-origin: bottom left;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		height: 4px;
+		bottom: -15px;
+		left: 0;
+		right: 0;
+		width: 250px;
+		margin: 0 auto;
+		border-radius: 10px;
+		background-color: $primaryColor;
+		transform-origin: bottom left;
+		transform: scaleX(1);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	&:hover::before {
+		transform: scaleX(0);
+		transform-origin: bottom right;
+	}
 }
 
 h3 {
@@ -96,5 +130,11 @@ a {
 @media (max-width: 1300px) {
 	h3 {
 		font-size: 1.78rem;
+	}
+}
+
+@media (max-width: 1150px) {
+	h3 {
+		font-size: 1.33rem;
 	}
 }
