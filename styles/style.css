@@ -226,6 +226,24 @@ body {
   cursor: auto;
 }
 
+body .skipLink {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+body .skipLink a {
+  position: absolute;
+  top: -200px;
+  background-color: #212121;
+  color: white;
+  z-index: 1;
+}
+
+body .skipLink a:focus {
+  top: 0;
+}
+
 .wrapper {
   max-width: 1500px;
   width: 90%;
@@ -829,12 +847,19 @@ header .cube {
   border: solid 20px rgba(149, 149, 149, 0.5);
 }
 
+header .cube:nth-of-type(1n) {
+  -webkit-animation: cubeSlide 4.8s ease-out;
+          animation: cubeSlide 4.8s ease-out;
+}
+
 header .cube:nth-child(2n) {
   left: auto;
   right: -100px;
   background: none;
   border: solid 20px white;
   z-index: 1;
+  -webkit-animation: cubeRotate 500s linear infinite;
+          animation: cubeRotate 500s linear infinite;
   -webkit-animation-delay: 15.5s;
           animation-delay: 15.5s;
 }
@@ -996,13 +1021,10 @@ header .cube:nth-child(3n) {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-bottom: 50px;
   margin-top: -200px;
   width: 60%;
-  max-width: 850px;
+  max-width: 700px;
   text-align: center;
 }
 
@@ -1069,6 +1091,7 @@ header .cube:nth-child(3n) {
 
 .about p {
   margin: 10px;
+  text-align: left;
 }
 
 .about button {
@@ -1102,7 +1125,7 @@ header .cube:nth-child(3n) {
           box-shadow: 0 0 30px 5px rgba(33, 33, 33, 0.1);
 }
 
-.toolbox .iconContainer {
+.toolbox .toolboxContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1110,6 +1133,15 @@ header .cube:nth-child(3n) {
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.toolbox p {
+  position: relative;
+  bottom: 22%;
+  color: #373C5C;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 .toolbox svg,
@@ -1177,6 +1209,9 @@ header .cube:nth-child(3n) {
   .toolbox {
     padding: 30px;
   }
+  .toolbox p {
+    font-size: 1rem;
+  }
   .toolbox svg,
   .toolbox .overlay,
   .toolbox i {
@@ -1188,7 +1223,7 @@ header .cube:nth-child(3n) {
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 625px) {
   .toolbox {
     padding: 30px 0;
   }
@@ -1626,7 +1661,7 @@ footer .wrapper a i {
 }
 
 footer .wrapper a i:hover {
-  color: #373C5C;
+  color: #4a517c;
 }
 
 footer .wrapper i,
@@ -1649,7 +1684,7 @@ footer .wrapper a a {
 
 footer .wrapper p a:hover,
 footer .wrapper a a:hover {
-  color: #373C5C;
+  color: #4a517c;
 }
 
 @media (max-width: 685px) {

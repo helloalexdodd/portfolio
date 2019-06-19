@@ -95,12 +95,26 @@ portfolio.navLinkClick = () => {
 	});
 };
 
+portfolio.workHover = () => {
+	// $('.workImage').hover(function () {
+	// 	$(this).imageOverlay.css('visibility', 'visible');
+	// });
+}
+
+portfolio.toolHover = () => {
+	$('.iconContainer').hover(function () {
+		$(this).iconLabel.css('z-index', '10');
+	});
+}
+
 portfolio.init = () => {
 	portfolio.smoothScroll();
-	portfolio.toolClick();
+	// portfolio.toolClick();
 	portfolio.hamburgerHover();
 	portfolio.hamburgerClick();
 	portfolio.navLinkClick();
+	portfolio.workHover();
+	portfolio.toolHover();
 }
 
 $(function () {

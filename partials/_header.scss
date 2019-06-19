@@ -328,7 +328,7 @@ header {
 		border: solid 20px rgba(149, 149, 149, .5);
 
 		&:nth-of-type(1n) {
-			// animation: cubeSlide 4.8s ease-out;
+			animation: cubeSlide 4.8s ease-out;
 		}
 
 		&:nth-child(2n) {
@@ -337,7 +337,7 @@ header {
 			background: none;
 			border: solid 20px $white;
 			z-index: 1;
-			// animation: cubeRotate 500s linear infinite;
+			animation: cubeRotate 500s linear infinite;
 			animation-delay: 15.5s;
 		}
 
