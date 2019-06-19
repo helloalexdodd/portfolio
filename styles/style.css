@@ -370,6 +370,59 @@ a {
   font-size: 1.1rem;
 }
 
+.cubeContainer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.cube {
+  position: absolute;
+  top: 18vh;
+  left: -20px;
+  width: 33.33%;
+  height: 65vh;
+  max-height: 600px;
+  background: white;
+  border: solid 20px rgba(149, 149, 149, 0.5);
+}
+
+.cube:nth-of-type(1n) {
+  -webkit-animation: cubeSlide 4.8s ease-out;
+          animation: cubeSlide 4.8s ease-out;
+}
+
+.cube:nth-child(2n) {
+  left: auto;
+  right: -100px;
+  background: none;
+  border: solid 20px white;
+  z-index: 1;
+  -webkit-animation: cubeRotate 500s linear infinite;
+          animation: cubeRotate 500s linear infinite;
+  -webkit-animation-delay: 15.5s;
+          animation-delay: 15.5s;
+}
+
+.cube:nth-child(3n) {
+  top: 0;
+  left: auto;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  max-height: 100vh;
+  border: none;
+  background: rgba(149, 149, 149, 0.5);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cubeInitialRotate 15.5s ease-in forwards, cubeGlow 20s linear infinite;
+          animation: cubeInitialRotate 15.5s ease-in forwards, cubeGlow 20s linear infinite;
+}
+
 @media (max-width: 1500px) {
   h1 {
     font-size: 4.21rem;
@@ -828,59 +881,6 @@ header .headerMain .tooltip .imageContainer img {
   z-index: 2;
 }
 
-header .cubeContainer {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-
-header .cube {
-  position: absolute;
-  top: 18vh;
-  left: -20px;
-  width: 33.33%;
-  height: 65vh;
-  max-height: 600px;
-  background: white;
-  border: solid 20px rgba(149, 149, 149, 0.5);
-}
-
-header .cube:nth-of-type(1n) {
-  -webkit-animation: cubeSlide 4.8s ease-out;
-          animation: cubeSlide 4.8s ease-out;
-}
-
-header .cube:nth-child(2n) {
-  left: auto;
-  right: -100px;
-  background: none;
-  border: solid 20px white;
-  z-index: 1;
-  -webkit-animation: cubeRotate 500s linear infinite;
-          animation: cubeRotate 500s linear infinite;
-  -webkit-animation-delay: 15.5s;
-          animation-delay: 15.5s;
-}
-
-header .cube:nth-child(3n) {
-  top: 0;
-  left: auto;
-  right: 0;
-  width: 50%;
-  height: 100vh;
-  max-height: 100vh;
-  border: none;
-  background: rgba(149, 149, 149, 0.5);
-  -webkit-transform-origin: top left;
-          transform-origin: top left;
-  -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
-  transform: scale(0) rotate(0deg) translate(-50%, -50%);
-  -webkit-animation: cubeInitialRotate 15.5s ease-in forwards, cubeGlow 20s linear infinite;
-          animation: cubeInitialRotate 15.5s ease-in forwards, cubeGlow 20s linear infinite;
-}
-
 @media (max-width: 1500px) {
   header .nav {
     position: relative;
@@ -1023,8 +1023,8 @@ header .cube:nth-child(3n) {
       justify-content: space-around;
   margin-bottom: 50px;
   margin-top: -200px;
-  width: 60%;
-  max-width: 700px;
+  width: 70%;
+  max-width: 900px;
   text-align: center;
 }
 
@@ -1091,7 +1091,11 @@ header .cube:nth-child(3n) {
 
 .about p {
   margin: 10px;
-  text-align: left;
+  text-align: justify;
+}
+
+.about p:first-of-type {
+  text-align: center;
 }
 
 .about button {
@@ -1199,13 +1203,13 @@ header .cube:nth-child(3n) {
   color: #212121;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1415px) {
   .toolbox {
     max-width: 1040px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 972px) {
   .toolbox {
     padding: 30px;
   }
@@ -1215,11 +1219,21 @@ header .cube:nth-child(3n) {
   .toolbox svg,
   .toolbox .overlay,
   .toolbox i {
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
     margin: 20px;
     -webkit-transition: .5s;
     transition: .5s;
+  }
+}
+
+@media (max-width: 869px) {
+  .toolbox svg,
+  .toolbox .overlay,
+  .toolbox i {
+    margin: 30px;
+    height: 70px;
+    width: 70px;
   }
 }
 

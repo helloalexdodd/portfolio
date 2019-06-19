@@ -4,8 +4,8 @@
 	justify-content: space-around;
 	margin-bottom: 50px;
 	margin-top: -200px;
-	width: 60%;
-	max-width: 700px;
+	width: 70%;
+	max-width: 900px;
 	text-align: center;
 
 	.tooltip {
@@ -67,7 +67,11 @@
 
 	p {
 		margin: 10px;
-		text-align: left;
+		text-align: justify;
+
+		&:first-of-type {
+			text-align: center;
+		}
 	}
 	
 	button {

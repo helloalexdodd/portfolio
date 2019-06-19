@@ -135,6 +135,57 @@ a {
 	font-size: 1.1rem;
 }
 
+.cubeContainer {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	overflow: hidden;
+}
+
+.cube {
+	position: absolute;
+	top: 18vh;
+	left: -20px;
+	width: 33.33%;
+	height: 65vh;
+	max-height: 600px;
+	background: $white;	
+	border: solid 20px rgba(149, 149, 149, .5);
+
+	&:nth-of-type(1n) {
+		animation: cubeSlide 4.8s ease-out;
+	}
+
+	&:nth-child(2n) {
+		left: auto;
+		right: -100px;
+		background: none;
+		border: solid 20px $white;
+		z-index: 1;
+		animation: cubeRotate 500s linear infinite;
+		animation-delay: 15.5s;
+	}
+
+	&:nth-child(3n) {
+		top: 0;
+		left: auto;
+		right: 0;
+		width: 50%;
+		height: 100vh;
+		max-height: 100vh;
+		border: none;
+		background: rgba(149, 149, 149, .5);
+		transform-origin: top left;
+		-webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+		-moz-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+		-ms-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+		-o-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+		transform: scale(0) rotate(0deg) translate(-50%, -50%);
+		animation: cubeInitialRotate 15.5s ease-in forwards, cubeGlow 20s linear infinite;
+	}
+}
+
 @media (max-width: 1500px) {
 	h1 {
 		font-size: 4.21rem;
