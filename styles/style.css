@@ -253,8 +253,8 @@ body .skipLink a:focus {
 button {
   height: 60px;
   width: 200px;
-  border: 2px solid #373C5C;
-  background: #373C5C;
+  border: 2px solid #363544;
+  background: #363544;
   color: white;
   font-family: "Cormorant", serif;
   -webkit-transition: .3s;
@@ -282,7 +282,7 @@ h3 {
 
 h1 {
   margin: 0;
-  font-size: 5.61rem;
+  font-size: 5rem;
   font-weight: bold;
 }
 
@@ -311,7 +311,7 @@ h2::after {
   width: 150px;
   margin: 0 auto;
   border-radius: 10px;
-  background-color: #373C5C;
+  background-color: #363544;
   -webkit-transform-origin: bottom right;
           transform-origin: bottom right;
   -webkit-transform: scaleX(1);
@@ -339,7 +339,7 @@ h2::before {
   width: 250px;
   margin: 0 auto;
   border-radius: 10px;
-  background-color: #373C5C;
+  background-color: #363544;
   -webkit-transform-origin: bottom left;
           transform-origin: bottom left;
   -webkit-transform: scaleX(1);
@@ -638,7 +638,7 @@ header .nav ul a::before {
   height: 5px;
   width: 5px;
   border-radius: 50%;
-  background: #373C5C;
+  background: #363544;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
   -webkit-transition: .3s linear;
@@ -657,7 +657,7 @@ header .nav ul a::after {
   height: 3px;
   bottom: 0;
   left: 0;
-  background: #373C5C;
+  background: #363544;
   visibility: hidden;
   border-radius: 5px;
   -webkit-transform: scaleX(0);
@@ -696,7 +696,7 @@ header .hamburger span {
   position: absolute;
   height: 5px;
   width: 100%;
-  background: #373C5C;
+  background: #363544;
   border-radius: 10px;
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -779,8 +779,8 @@ header .headerMain .headerInfo .typed-cursor {
 }
 
 header .headerMain .headerInfo a {
-  border: 2px solid #373C5C;
-  background: #373C5C;
+  border: 2px solid #363544;
+  background: #363544;
   color: white;
   font-size: .9rem;
   text-decoration: none;
@@ -876,8 +876,9 @@ header .headerMain .tooltip .imageContainer {
 
 header .headerMain .tooltip .imageContainer img {
   position: absolute;
-  top: -60px;
-  width: 350px;
+  top: -90px;
+  right: -30px;
+  width: 400px;
   z-index: 2;
 }
 
@@ -1142,7 +1143,7 @@ header .headerMain .tooltip .imageContainer img {
 .toolbox p {
   position: relative;
   bottom: 22%;
-  color: #373C5C;
+  color: #363544;
   font-size: 1.1rem;
   font-weight: 700;
   text-align: center;
@@ -1194,8 +1195,8 @@ header .headerMain .tooltip .imageContainer img {
 }
 
 .toolbox .overlay:hover + svg path {
-  color: #373C5C;
-  fill: #373C5C;
+  color: #363544;
+  fill: #363544;
 }
 
 .toolbox .fas {
@@ -1389,7 +1390,7 @@ header .headerMain .tooltip .imageContainer img {
 .portfolio .workContainer .tools li {
   margin: 5px;
   padding: 5px 7px;
-  border: 1.5px dashed #373C5C;
+  border: 1.5px dashed #363544;
 }
 
 .portfolio .workContainer .workInfo {
@@ -1413,7 +1414,7 @@ header .headerMain .tooltip .imageContainer img {
   height: 5px;
   width: 5px;
   border-radius: 50%;
-  background: #373C5C;
+  background: #363544;
 }
 
 .portfolio .workContainer .workInfo p {
@@ -1425,7 +1426,7 @@ header .headerMain .tooltip .imageContainer img {
   width: 100px;
   margin: 10px;
   padding: 10px 15px;
-  background: #373C5C;
+  background: #363544;
   text-decoration: none;
   color: white;
   -webkit-transition: .3s;
@@ -1562,6 +1563,7 @@ header .headerMain .tooltip .imageContainer img {
   padding: 20px;
   width: calc(50% - 20px);
   border: none;
+  border-radius: 0;
   border-bottom: 2px solid #212121;
 }
 
@@ -1610,6 +1612,7 @@ header .headerMain .tooltip .imageContainer img {
   width: 100%;
   margin: 40px 0px;
   padding: 10px 0 200px 10px;
+  border-radius: 0;
   resize: none;
 }
 
@@ -1675,7 +1678,7 @@ footer .wrapper a i {
 }
 
 footer .wrapper a i:hover {
-  color: #4a517c;
+  color: #4c4c61;
 }
 
 footer .wrapper i,
@@ -1698,7 +1701,7 @@ footer .wrapper a a {
 
 footer .wrapper p a:hover,
 footer .wrapper a a:hover {
-  color: #4a517c;
+  color: #4c4c61;
 }
 
 @media (max-width: 685px) {
