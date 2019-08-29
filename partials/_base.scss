@@ -34,7 +34,7 @@ body {
 button {
 	height: 60px;
 	width: 200px;
-	border: 2px solid $primaryColor;
+	border: 2px solid $secondaryColor;
 	background: $primaryColor;
 	color: $white;
 	font-family: $primaryFont;
@@ -89,7 +89,7 @@ h2 {
 		width: 150px;
 		margin: 0 auto;
 		border-radius: 10px;
-		background-color: $primaryColor;
+		background-color: $secondaryColor;
 		transform-origin: bottom right;
 		transform: scaleX(1);
 		transition: transform 0.3s ease-in-out;
@@ -110,7 +110,7 @@ h2 {
 		width: 250px;
 		margin: 0 auto;
 		border-radius: 10px;
-		background-color: $primaryColor;
+		background-color: $secondaryColor;
 		transform-origin: bottom left;
 		transform: scaleX(1);
 		transition: transform 0.3s ease-in-out;
@@ -150,8 +150,8 @@ a {
 	width: 33.33%;
 	height: 65vh;
 	max-height: 600px;
-	background: $white;	
-	border: solid 20px rgba(149, 149, 149, .5);
+	// background: $white;
+	border: solid 20px rgba(95, 95, 131, 0.6);
 
 	&:nth-of-type(1n) {
 		animation: cubeSlide 4.8s ease-out;
@@ -175,7 +175,7 @@ a {
 		height: 100vh;
 		max-height: 100vh;
 		border: none;
-		background: rgba(149, 149, 149, .5);
+		background: rgba(95, 147, 132, 0.5);
 		transform-origin: top left;
 		-webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
 		-moz-transform: scale(0) rotate(0deg) translate(-50%, -50%);

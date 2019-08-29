@@ -31,7 +31,7 @@ header {
 					height: 5px;
 					width: 5px;
 					border-radius: 50%;
-					background: $primaryColor;
+					background: $secondaryColor;
 					-moz-transform: scaleY(1);
 					-o-transform: scaleY(1);
 					-webkit-transform: scaleX(1);
@@ -52,7 +52,7 @@ header {
 					height: 3px;
 					bottom: 0;
 					left: 0;
-					background: $primaryColor;
+					background: $secondaryColor;
 					visibility: hidden;
 					border-radius: 5px;
 					-webkit-transform: scaleX(0);					
@@ -97,7 +97,7 @@ header {
 			position: absolute;
 			height: 5px;
 			width: 100%;
-			background: $primaryColor;
+			background: $secondaryColor;
 			border-radius: 10px;
 			-webkit-transform: rotate(0deg);
 			-moz-transform: rotate(0deg);
@@ -211,7 +211,7 @@ header {
 			}
 			
 			a {
-				border: 2px solid $primaryColor;
+				border: 2px solid $secondaryColor;
 				background: $primaryColor;
 				color: $white;
 				font-size: .9rem;
@@ -325,7 +325,7 @@ header {
 					position: fixed;
 					top: -300px;
 					right: 50px;
-					background: rgba(149, 149, 149, .5);
+					background: lighten(rgba(95, 95, 131, 0.6), 20%);
 					height: 50px;
 					padding: 10px 20px;
 					text-align: left;
@@ -344,7 +344,8 @@ header {
 				width: 300px;
 
 				img {
-					width: 300px;
+					width: 350px;
+					top: -80px;
 				}
 			}
 		}
@@ -422,7 +423,7 @@ header {
 		.nav {
 			ul {
 				li {
-					background: rgba(149, 149, 149, 1);				
+					background: lighten(rgba(95, 95, 131, 0.6), 20%);
 				}
 			}
 		}
@@ -494,6 +495,19 @@ header {
 	.headerInfo {
 		.typed {
 			font-size: 1.33rem;
+		}
+	}
+
+	.headerMain {
+		.tooltip {
+			.imageContainer {
+				height: 250px;
+				width: 250px;
+
+				img {
+					width: 300px;
+				}
+			}
 		}
 	}
 }

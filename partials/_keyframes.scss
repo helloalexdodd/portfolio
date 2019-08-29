@@ -33,19 +33,19 @@
 
 @keyframes cubeGlow {
 	from {
-		background: rgba(149, 149, 149, .5);
+		background: rgba(95, 147, 132, 0.25);
 	}
 	25% {
-		background: rgba(149, 149, 149, .1);		
+		background: rgba(95, 147, 132, 0.1);
 	}
 	50% {
-		background: rgba(149, 149, 149, .8);		
+		background: rgba(95, 147, 132, 0.5);
 	}
 	75% {
-		background: rgba(149, 149, 149, .1);		
+		background: rgba(95, 147, 132, 0.1);
 	}
 	to {
-		background: rgba(149, 149, 149, .5);
+		background: rgba(95, 147, 132, 0.25);
 	}
 }
 
